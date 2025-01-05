@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chromebook Critical Alert</title>
+<style>
+  body {
+    background-color: black;
+    color: white;
+    animation: shake 0.5s;
+  }
+</style>
+</head>
+<body>
+<h1>⚠️ Warning: Chromebook Critical Alert ⚠️</h1>
+<button onclick="showAlert()">Stop This Now!!!</button>
+
+<script>
+function showAlert() {
+  alert("lol ur stupid lmao u are rly dumb u absolute buffoon haha XD");
+  crashSite();
+}
+
+function crashSite() {
+  alert("The website crashed and won't turn back on again.");
+  showCreepyText();
+}
+
+function showCreepyText() {
+  const creepyMessages = ["YOU CAME BACK...", "WHY...", "YOU ARE IN DANGER NOW...", "TURN BACK...", "YOU CANNOT COME BACK AGAIN, I'M WARNING YOU..."];
+  let index = 0;
+  const interval = setInterval(() => {
+    document.body.innerHTML = creepyMessages[index];
+    index++;
+    if (index === creepyMessages.length) {
+      clearInterval(interval);
+      startFlashing();
+    }
+  }, 2000);
+}
+
+function startFlashing() {
+  let flashing = setInterval(() => {
+    document.body.style.color = "black";
+    setTimeout(() => {
+      document.body.style.color = "white";
+    }, 10);
+  }, 50);
+  setTimeout(() => {
+    clearInterval(flashing);
+    document.body.style.backgroundColor = "red";
+    document.body.innerHTML = "RUN ".repeat(1000000); // Infinite "RUN" spam
+    setTimeout(() => {
+      window.close();
+    }, 10000);
+  }, 10000);
+}
+</script>
+</body>
+</html>
